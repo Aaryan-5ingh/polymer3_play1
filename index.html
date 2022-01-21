@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="" content="0;url=/" />
+    <title>element-a</title>
+	<style>ran-el{background-color:lightblue;cursor:pointer;}</style>
+  </head>
+  <body>
+    <!--
+        Visit demo/index.html to see live examples of your element running.
+        This page will automatically redirect you there when run in the browser
+        with `polymer serve`.
+      --><a href="/demo">go to demo</a>
+	<ran-el></ran-el>
+	<ran-el k-p="hullo"></ran-el>
+<hr /> <fita-pita></fita-pita>
+	<script type="module">
+		import {PolymerElement,html} from '@polymer/polymer/polymer-element.js';class Fita extends PolymerElement{static get template(){return(html`<style>h1{color:pink;}</style><b>[[kP]]</b><h1>[[p]]</h1>`);}static get properties(){return({kP:{type:String,value:"slot and children left"}});} constructor(){super();alert("upgrade");this.p="how to change tuff?";}}
+	customElements.define('ran-el',Fita);
+
+
+	class Abcc extends PolymerElement{static get is(){return('fita-pita');} static get properties(){return({ap:{v:9}});} constructor(){super();alert('ff');}}
+	customElements.define(Abcc.is,Abcc);
+	</script>
+  </body>
+</html>
